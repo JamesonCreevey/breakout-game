@@ -129,7 +129,8 @@ function moveBall() {
   bricks.forEach((column) => {
     column.forEach((brick) => {
       if (brick.visible) {
-        if (ball.x - ball.size > brick.x && // left brick side check
+        if (
+          ball.x - ball.size > brick.x && // left brick side check
           ball.x + ball.size < brick.x + brick.w && // right brick side check
           ball.y + ball.size > brick.y && // top brick side check
           ball.y - ball.size < brick.y + brick.h // bottom brick side check
@@ -156,13 +157,13 @@ function increaseScore() {
   if (score % (brickRowCount * brickRowCount) === 0) {
     showAllBricks();
   }
-};
+}
 
 //Show bricks appear
 function showAllBricks() {
-  bricks.forEach(column => {
-    column.forEach(brick => brick.visible = true);
-  })
+  bricks.forEach((column) => {
+    column.forEach((brick) => (brick.visible = true));
+  });
 }
 
 //Draw everything
